@@ -1,21 +1,12 @@
 import "./NavBar.scss";
 import SearchBox from "../../components/SearchBox/SearchBox";
-import { useState, FormEvent } from "react";
+import { Beer } from "../../Data/Types";
 
-// type NavBarProps = {
-//   beers: Beer[];
-// };
+type NavBarProps = {
+  beers: Beer[];
+};
 
 const NavBar = () => {
-  const [searchTerm, setSearchTerm] = useState<string>("");
-
-  const handleInput = (event: FormEvent<HTMLInputElement>) => {
-    const cleanInput = event.currentTarget.value.toLowerCase();
-    setSearchTerm(cleanInput);
-  };
-
-  // const filteredAlbums = beers.filter((beer) => beer.name.includes(searchTerm));
-
   return (
     <nav>
       <div>
