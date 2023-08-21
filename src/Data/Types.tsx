@@ -71,3 +71,9 @@ type Ingredients = {
   hops: Hop[];
   yeast: string;
 };
+
+export type FilterType = {
+  value: string;
+  label: string;
+  isChecked: boolean;
+};

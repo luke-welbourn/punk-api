@@ -1,25 +1,20 @@
 import "./NavBar.scss";
 import SearchBox from "../../components/SearchBox/SearchBox";
-import { Beer } from "../../Data/Types";
+import { FilterType } from "../../Data/Types";
+import 
 
 type NavBarProps = {
-  beers: Beer[];
+  filters: FilterType[];
+  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleChecked: (filter: FilterType, isChecked: boolean) => void;
 };
 
-const NavBar = () => {
+const NavBar = ({ filters, handleChange, handleChecked }: NavBarProps) => {
   return (
     <nav>
       <div>
-        <SearchBox
-          label="Beers"
-          handleInput={handleInput}
-          searchTerm={searchTerm}
-        />
-      </div>
-      <div>
-        <p>High ABV 6.0%</p>
-        <p>Classic Range</p>
-        <p>Acidic ph above 4</p>
+        <SearchBox placeholder="Search..." handleChange={handleChange} />
+        <FiltersList filters={filters} handleChecked={handleChecked} />
       </div>
     </nav>
   );

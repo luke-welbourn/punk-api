@@ -1,7 +1,16 @@
 import "./CardList.scss";
+import { Beer } from "../../Data/Types";
 
-const CardList = (props) => {
-  const { beers, searchTerm, filters } = props;
+type CardListProps = {
+    beers: Beer[],
+    searchTerm: string,
+    filters: 
+}
+
+
+
+const CardList = ({beers, searchTerm, filters}: CardListProps) => {
+
   const checked = filters
     .filter((condition) => condition.isChecked)
     .map((condition) => condition.value);
