@@ -5,7 +5,7 @@ type NavBarProps = {
   beers: Beer[];
 };
 
-const Main = () => {
+const Main = ({ beers }: NavBarProps) => {
   return <main></main>;
 };
 
