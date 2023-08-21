@@ -1,13 +1,18 @@
 import "./Card.scss";
 
 type CardProps = {
+  beerProfile: beerProfile;
+};
+
+type beerProfile = {
   name: string;
   description: string;
   abv: number;
-  image: string;
+  image_url: string;
 };
 
-const card = ({ name, description, abv, image }: CardProps) => {
+const Card = ({ beerProfile }: CardProps) => {
+  const { name, description, abv, image_url } = beerProfile;
   const shortenDescription = (value: string) => {
     return value.length < 190
       ? value
@@ -16,7 +21,7 @@ const card = ({ name, description, abv, image }: CardProps) => {
 
   return (
     <div>
-      <img src={image} alt={name} />
+      <img src={image_url} alt={name} />
       <div>
         <h2>{name.split("-")[0]}</h2>
       </div>
@@ -26,4 +31,4 @@ const card = ({ name, description, abv, image }: CardProps) => {
   );
 };
 
-export default card;
+export default Card;

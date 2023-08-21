@@ -2,7 +2,7 @@ import "./SearchBox.scss";
 
 type SearchBoxProps = {
   placeholder: string;
-  handleChange: () => void;
+  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 const SearchBox = ({ placeholder, handleChange }: SearchBoxProps) => {

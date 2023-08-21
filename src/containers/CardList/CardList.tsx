@@ -1,19 +1,18 @@
 import "./CardList.scss";
 import { Beer } from "../../Data/Types";
+import Card from "../../components/Card/Card";
+import { FilterType } from "../../Data/Types";
 
 type CardListProps = {
-    beers: Beer[],
-    searchTerm: string,
-    filters: 
-}
+  beers: Beer[];
+  searchTerm: string;
+  filters: FilterType[];
+};
 
-
-
-const CardList = ({beers, searchTerm, filters}: CardListProps) => {
-
+const CardList = ({ beers, searchTerm, filters }: CardListProps) => {
   const checked = filters
-    .filter((condition) => condition.isChecked)
-    .map((condition) => condition.value);
+    .filter((condition: any) => condition.isChecked)
+    .map((condition: any) => condition.value);
 
   const results = beers
     // Filter beers by if it includes the searchTerm from searchbox
@@ -24,19 +23,20 @@ const CardList = ({beers, searchTerm, filters}: CardListProps) => {
     .filter((beer) => (checked.includes("abv") ? beer.abv > 6 : beer))
     // Filter beers by filter (if checked) of if the beer is a classic
     .filter((beer) =>
-      checked.includes("classic") ? beer.first_brewed.slice(-4) < 2010 : beer
+      checked.includes("classic")
+        ? parseInt(beer.first_brewed.slice(-4)) < 2010
+        : true
     )
     // Filter beers by filter (if checked) of under 4PH
     .filter((beer) => (checked.includes("acidic") ? beer.ph < 4 : beer))
     // Map all beers that pass these criteria
-    .map((beer) => <Card key={beer.id} beer={beer} />);
+    .map((beer) => <Card key={beer.id} beerProfile={beer} />);
 
   // return results.length > 0 ? results : displayMsg();
-  return <section className={styles.cardList}>{results}</section>;
+  return <div>{results}</div>;
 };
 
-const displayMsg = () => {
-  return <span className={styles.displayMsg}>No results to display...</span>;
-};
+// const NothingThere = () => {
+// };
 
 export default CardList;

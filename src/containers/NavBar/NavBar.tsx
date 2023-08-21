@@ -1,7 +1,7 @@
 import "./NavBar.scss";
 import SearchBox from "../../components/SearchBox/SearchBox";
 import { FilterType } from "../../Data/Types";
-import 
+import FiltersList from "../FiltersList/FiltersList";
 
 type NavBarProps = {
   filters: FilterType[];
