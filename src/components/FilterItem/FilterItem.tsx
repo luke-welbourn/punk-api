@@ -18,7 +18,7 @@ const FilterItem = ({ filter, handleChecked }: FilterItemProps) => {
   const { label, value } = filter;
 
   return (
-    <div>
+    <div className="filter-item">
       <label>{label}</label>
       <input type="checkbox" value={value} onClick={toggleCheckbox} />
     </div>

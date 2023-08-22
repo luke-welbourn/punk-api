@@ -23,8 +23,6 @@ function App() {
     const data = await response.json();
 
     setBeers(data);
-
-    data.catch((error: string) => console.log(error));
   };
 
   getBeer();

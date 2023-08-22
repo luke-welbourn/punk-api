@@ -14,6 +14,9 @@ const NavBar = ({ filters, handleChange, handleChecked }: NavBarProps) => {
     <nav>
       <div>
         <SearchBox placeholder="Search..." handleChange={handleChange} />
+      </div>
+      <div>
+        {" "}
         <FiltersList filters={filters} handleChecked={handleChecked} />
       </div>
     </nav>

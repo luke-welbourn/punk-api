@@ -15,7 +15,7 @@ const FiltersList = ({ filters, handleChecked }: FiltersListProps) => {
   );
 
   return (
-    <div>
+    <div className="filters-list">
       <h4>Filters</h4>
       {filters.map(getFilter)}
     </div>
