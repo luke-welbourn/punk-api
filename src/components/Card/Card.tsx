@@ -20,7 +20,7 @@ const Card = ({ beerProfile }: CardProps) => {
   };
 
   return (
-    <div>
+    <div className="card">
       <img src={image_url} alt={name} />
       <div>
         <h2>{name.split("-")[0]}</h2>
