@@ -27,10 +27,23 @@ const CardList = ({ beers, searchTerm, filters }: CardListProps) => {
     .filter((beer) => (checked.includes("acidic") ? beer.ph < 4 : beer))
     .map((beer) => <Card key={beer.id} beerProfile={beer} />);
 
+  // check to see if the results array is empty
+
+  if (!results[0]) {
+    return (
+      <div className="no-results">
+        <p>
+          {" "}
+          We don't make that?<br></br>
+          <br></br> If you think we are missing a trick send your suggestions to{" "}
+          <br></br>
+          punk-api@brewery.delicious.co.uk
+        </p>
+      </div>
+    );
+  }
+
   return <div className="card-container">{results}</div>;
 };
-
-// const NothingThere = () => {
-// };
 
 export default CardList;

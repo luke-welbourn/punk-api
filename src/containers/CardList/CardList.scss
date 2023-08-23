@@ -12,3 +12,16 @@ body {
 
   align-content: start;
 }
+
+.no-results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 85vw;
+  font-size: 1.5em;
+
+  p {
+    width: 50vw;
+  }
+}

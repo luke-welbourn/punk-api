@@ -21,7 +21,11 @@ const Card = ({ beerProfile }: CardProps) => {
 
   return (
     <div className="card">
-      <img src={image_url} alt={name} />
+      <img
+        src={image_url ?? "https://images.punkapi.com/v2/113.png"}
+        // image url or template beer image
+        alt={name}
+      />
       <div>
         <h2>{name.split("-")[0]}</h2>
       </div>
