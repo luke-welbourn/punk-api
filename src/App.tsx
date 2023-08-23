@@ -18,7 +18,9 @@ function App() {
   const handleChange = (event: any) => setSearchTerm(event.target.value);
 
   const getBeer = async () => {
-    const response = await fetch("https://api.punkapi.com/v2/beers");
+    const response = await fetch(
+      "https://api.punkapi.com/v2/beers?page=1&per_page=80"
+    );
 
     const data = await response.json();
 
