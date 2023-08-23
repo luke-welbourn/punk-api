@@ -3,6 +3,8 @@ import "./App.scss";
 import NavBar from "./containers/NavBar/NavBar";
 import Main from "./containers/Main/Main";
 import { Beer, FilterType } from "./Data/Types";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import BeerId from "./components/BeerId";
 
 function App() {
   const [beers, setBeers] = useState<Beer[]>([]);
@@ -61,14 +63,24 @@ function App() {
   };
 
   return (
-    <div className="app">
-      <NavBar
-        filters={filters}
-        handleChange={handleChange}
-        handleChecked={handleChecked}
-      />
-      <Main beers={beers} searchTerm={searchTerm} filters={filters} />
-    </div>
+    <BrowserRouter>
+      <div className="app">
+        <NavBar
+          filters={filters}
+          handleChange={handleChange}
+          handleChecked={handleChecked}
+        />
+        <Routes>
+          <Route
+            path="/punk-api/"
+            element={
+              <Main beers={beers} searchTerm={searchTerm} filters={filters} />
+            }
+          />
+          <Route path="/punk-api/:id" />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 

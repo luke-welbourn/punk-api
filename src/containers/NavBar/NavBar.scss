@@ -1,10 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Gluten&family=Rubik&display=swap");
+
 nav {
   position: fixed;
   top: 0;
   left: 0;
   width: 15vw;
   height: 100vh;
-  background-color: #f0f0f0;
+  background-color: #353434;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -12,6 +14,10 @@ nav {
   padding: 20px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 999;
+
+  .search-box {
+    color: red;
+  }
 
   .filter-item {
     display: flex;

@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: rgb(181, 185, 189);
 }
 
 .card-container {
@@ -8,7 +9,8 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 30px;
   height: 100%;
-  width: 83vw;
+  width: 82vw;
+  background-color: rgb(181, 185, 189);
 
   align-content: start;
 }
