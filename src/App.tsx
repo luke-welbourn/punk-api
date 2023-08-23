@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.scss";
 import NavBar from "./containers/NavBar/NavBar";
 import Main from "./containers/Main/Main";
@@ -18,20 +18,44 @@ function App() {
   const handleChange = (event: any) => setSearchTerm(event.target.value);
 
   const getBeer = async () => {
-    const response = await fetch(
-      "https://api.punkapi.com/v2/beers?page=1&per_page=80"
-    );
+    try {
+      const endpoints = [
+        "https://api.punkapi.com/v2/beers?page=1&per_page=80",
+        "https://api.punkapi.com/v2/beers?page=2&per_page=80",
+        "https://api.punkapi.com/v2/beers?page=3&per_page=80",
+        "https://api.punkapi.com/v2/beers?page=4&per_page=80",
+      ];
 
-    const data = await response.json();
+      const responsePromises = endpoints.map(async (endpoint) => {
+        const response = await fetch(endpoint);
+        return response.json();
+      });
 
-    setBeers(data);
+      const responseDataArrays = await Promise.all(responsePromises);
+      const combinedData = responseDataArrays.flat();
+
+      // Sort the beers alphabetically
+      const alphabetBeers = [...combinedData].sort((a, b) =>
+        a.name.localeCompare(b.name)
+      );
+
+      setBeers(alphabetBeers);
+    } catch (error) {
+      console.error("Error fetching and processing data:", error);
+    }
   };
 
-  getBeer();
+  // use Effect just loads getBeer on load
+
+  useEffect(() => {
+    getBeer();
+  }, []);
+
+  // modify the filters array
 
   const handleChecked = (filter: FilterType, isChecked: boolean) => {
-    const updatedFilters = filters.map((f) =>
-      f.value === filter.value ? { ...f, isChecked } : f
+    const updatedFilters = filters.map((filter2) =>
+      filter2.value === filter.value ? { ...filter2, isChecked } : filter2
     );
     setFilters(updatedFilters);
   };
