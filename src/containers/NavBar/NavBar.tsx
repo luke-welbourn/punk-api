@@ -12,7 +12,7 @@ type NavBarProps = {
 const NavBar = ({ filters, handleChange, handleChecked }: NavBarProps) => {
   return (
     <nav>
-      <div className="search-box">
+      <div>
         <SearchBox placeholder="Search..." handleChange={handleChange} />
       </div>
       <div className="filter-list">

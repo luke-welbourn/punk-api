@@ -7,8 +7,13 @@ type SearchBoxProps = {
 
 const SearchBox = ({ placeholder, handleChange }: SearchBoxProps) => {
   return (
-    <div>
-      <input type="text" placeholder={placeholder} onChange={handleChange} />
+    <div className="search-box">
+      <input
+        className="search-box__input"
+        type="text"
+        placeholder={placeholder}
+        onChange={handleChange}
+      />
     </div>
   );
 };
