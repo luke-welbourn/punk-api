@@ -23,4 +23,17 @@ nav {
     top: calc(33.33vh + 20px);
     width: 100%;
   }
+
+  .home {
+    position: absolute;
+    top: calc(66vh + 20px);
+    width: 100%;
+    color: white;
+    text-decoration: none;
+    font-size: 1.3em;
+
+    .home:visited {
+      color: white;
+    }
+  }
 }

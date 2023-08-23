@@ -4,7 +4,7 @@ import NavBar from "./containers/NavBar/NavBar";
 import Main from "./containers/Main/Main";
 import { Beer, FilterType } from "./Data/Types";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import BeerId from "./components/BeerId";
+import BeerId from "./components/BeerId/BeerId";
 
 function App() {
   const [beers, setBeers] = useState<Beer[]>([]);
@@ -77,7 +77,7 @@ function App() {
               <Main beers={beers} searchTerm={searchTerm} filters={filters} />
             }
           />
-          <Route path="/punk-api/:id" />
+          <Route path="/punk-api/:id" element={<BeerId beer={beers} />} />
         </Routes>
       </div>
     </BrowserRouter>

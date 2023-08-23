@@ -3,6 +3,7 @@ import Card from "./Card";
 
 it("should render a card", () => {
   const exampleBeerProfile = {
+    id: 34,
     name: "Duff Beer",
     description:
       "An everyman's beer, Duff is a light refreshing beer that is sourced from only the highest quality wheat",

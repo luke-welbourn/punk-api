@@ -1,10 +1,12 @@
 import "./Card.scss";
+import { Link } from "react-router-dom";
 
 type CardProps = {
   beerProfile: beerProfile;
 };
 
 type beerProfile = {
+  id: number;
   name: string;
   description: string;
   abv: number;
@@ -27,7 +29,9 @@ const Card = ({ beerProfile }: CardProps) => {
         alt={name}
       />
       <div>
-        <h2>{name.split("-")[0]}</h2>
+        <Link to={`/punk-api/${beerProfile.id}}`} key={beerProfile.id}>
+          <h2>{name.split("-")[0]}</h2>
+        </Link>
       </div>
       <span>ABV {abv}%</span>
       <p>{shortenDescription(description)}</p>
