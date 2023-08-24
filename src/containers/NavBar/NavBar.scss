@@ -48,3 +48,14 @@ nav {
     text-decoration: none;
   }
 }
+
+.back-to-top-link {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}

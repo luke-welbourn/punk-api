@@ -11,6 +11,10 @@ type NavBarProps = {
 };
 
 const NavBar = ({ filters, handleChange, handleChecked }: NavBarProps) => {
+  const backToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <nav>
       <div>
@@ -21,6 +25,11 @@ const NavBar = ({ filters, handleChange, handleChecked }: NavBarProps) => {
       </div>
       <div className="home">
         <Link to={"/punk-api/"}>Drinks</Link>
+      </div>
+      <div>
+        <a href="#" className="back-to-top-link" onClick={backToTop}>
+          Back to Top
+        </a>
       </div>
     </nav>
   );
