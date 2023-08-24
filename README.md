@@ -1,4 +1,4 @@
-# Project Name
+# punk-api
 
 **Project Description:** This project is a React-based website that utilizes the Punk API to showcase a collection of beers. The website includes a filtering mechanism based on alcohol content, brew range, and acidity, allowing users to explore and discover beers based on their preferences. The project was completed over a week as part of ongoing learning and development in React through the \_nology program.
 
@@ -10,6 +10,7 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [Components](#components)
+- [Code-Snippets](#code-snippets)
 - [Challenges](#challenges)
 - [Contributing](#contributing)
 - [About-Me](#about-me)

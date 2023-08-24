@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: rgb(181, 185, 189);
 }
 
 .card-container {
@@ -8,6 +9,19 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 30px;
   height: 100%;
-  width: 83vw;
+  width: 82vw;
+  background-color: rgb(181, 185, 189);
   align-content: start;
+}
+
+.no-results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 85vw;
+  font-size: 1.5em;
+}
+.no-results p {
+  width: 50vw;
 }/*# sourceMappingURL=CardList.css.map */

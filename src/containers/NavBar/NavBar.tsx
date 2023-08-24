@@ -24,7 +24,7 @@ const NavBar = ({ filters, handleChange, handleChecked }: NavBarProps) => {
         <FiltersList filters={filters} handleChecked={handleChecked} />
       </div>
       <div className="home">
-        <Link to={"/punk-api/"}>Drinks</Link>
+        <Link to={"/punk-api/"}>Back to Search</Link>
       </div>
       <div>
         <a href="#" className="back-to-top-link" onClick={backToTop}>
