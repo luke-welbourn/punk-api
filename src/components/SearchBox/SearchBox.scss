@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Gluten&family=Rubik&display=swap");
 
 .search-box {
-  /* Resetting default styles */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,7 +10,6 @@
 }
 
 .search-box__input {
-  /* Resetting default styles */
   border: none;
   background: none;
   width: 10vw;

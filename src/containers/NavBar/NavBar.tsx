@@ -20,7 +20,7 @@ const NavBar = ({ filters, handleChange, handleChecked }: NavBarProps) => {
         <FiltersList filters={filters} handleChecked={handleChecked} />
       </div>
       <div className="home">
-        <Link to={"/punk-api/"}>Back to Searching</Link>
+        <Link to={"/punk-api/"}>Drinks</Link>
       </div>
     </nav>
   );

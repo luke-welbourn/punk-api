@@ -7,7 +7,8 @@ type BeerIdProps = {
 };
 
 const BeerId = ({ beer }: BeerIdProps) => {
-  const searchParam = parseInt(useParams().id);
+  const checkSearchParam = useParams().id;
+  const searchParam = checkSearchParam ? parseInt(checkSearchParam) : undefined;
 
   const beerParam = beer.find((bottle) => bottle.id === searchParam);
 
@@ -21,7 +22,10 @@ const BeerId = ({ beer }: BeerIdProps) => {
 
   return (
     <div className="beer-card">
-      <img src={beerParam.image_url} alt={beerParam.name} />
+      <img
+        src={beerParam.image_url ?? "https://images.punkapi.com/v2/113.png"}
+        alt={beerParam.name}
+      />
       <h2>{beerParam.name}</h2>
       <p>{beerParam.description}</p>
       <div className="beer-details">
