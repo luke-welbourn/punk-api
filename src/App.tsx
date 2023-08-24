@@ -43,7 +43,7 @@ function App() {
 
       setBeers(alphabetBeers);
     } catch (error) {
-      console.error("Error fetching and processing data:", error);
+      console.error("98 bottles of beer on the wall", error);
     }
   };
 
