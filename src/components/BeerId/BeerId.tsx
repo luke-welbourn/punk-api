@@ -14,9 +14,10 @@ const BeerId = ({ beer }: BeerIdProps) => {
 
   if (beerParam === undefined)
     return (
-      <p>
-        That one fell of the truck, unfortunately we can't find any drinks with
-        that id. Probably Luke's fault
+      <p className="error-id">
+        That bottle fell of the truck<br></br>
+        <br></br>Unfortunately we can't find any drinks with that id. Probably
+        Luke's fault
       </p>
     );
 

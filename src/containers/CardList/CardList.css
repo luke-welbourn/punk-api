@@ -1,6 +1,8 @@
+/* CardList.scss */
 body {
   margin: 0;
   padding: 0;
+  width: 100%;
   background-color: rgb(181, 185, 189);
 }
 
@@ -24,4 +26,12 @@ body {
 }
 .no-results p {
   width: 50vw;
+}
+
+@media screen and (max-width: 768px) {
+  .card-container {
+    margin: none;
+    border: none;
+    width: 86%;
+  }
 }/*# sourceMappingURL=CardList.css.map */

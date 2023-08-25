@@ -7,4 +7,19 @@
 .filters-list h4 {
   font-size: 1.5em;
   text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  .filters-list {
+    position: absolute;
+    top: 85vh;
+    left: 20px;
+    right: 20px;
+    width: calc(100% - 40px);
+    display: flex;
+    flex-direction: row;
+  }
+  h4 {
+    font-size: 1.2em;
+  }
 }/*# sourceMappingURL=FiltersList.css.map */

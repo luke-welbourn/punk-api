@@ -1,3 +1,13 @@
+/* FilterItem.scss */
+
 .filter-item {
   width: 12vw;
+}
+
+@media screen and (max-width: 768px) {
+  .filter-item {
+    width: 20vw;
+    color: black;
+    font-size: 0.6em;
+  }
 }

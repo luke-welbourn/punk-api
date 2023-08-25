@@ -15,10 +15,13 @@ type beerProfile = {
 
 const Card = ({ beerProfile }: CardProps) => {
   const { name, description, abv, image_url } = beerProfile;
+
   const shortenDescription = (value: string) => {
-    return value.length < 190
-      ? value
-      : value.substring(0, value.lastIndexOf(".", 190)) + ".";
+    if (value.length < 190) {
+      return value;
+    } else {
+      return value.substring(0, value.lastIndexOf(".", 190)) + "...";
+    }
   };
 
   return (

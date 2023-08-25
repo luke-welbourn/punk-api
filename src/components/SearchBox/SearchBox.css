@@ -22,4 +22,20 @@
      -moz-appearance: none;
           appearance: none;
   border-bottom: 2px solid white;
+}
+
+@media screen and (max-width: 768px) {
+  .search-box {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 80vw;
+    height: 30px;
+    background-color: rgba(5, 5, 5, 0.5);
+  }
+  .search-box__input {
+    width: 80vw;
+    font-size: 1.5em;
+    border-bottom: none;
+  }
 }/*# sourceMappingURL=SearchBox.css.map */
